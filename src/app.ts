@@ -3,6 +3,8 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import authRoutes from "./auth/auth.routes";
+import notificationRoute from "./routes/notification.router";
+import { notification } from "./services/notification.service";
 
 const app: Application = express();
 
@@ -30,6 +32,7 @@ app.get("/health", (req: Request, res: Response) => {
  * Routes
  */
 app.use("/api/auth", authRoutes);
+app.use("/api", notificationRoute);
 
 
 /**

@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 5000;
 /**
  * Start Server Function
  */
+import "./models";
 const startServer = async (): Promise<void> => {
     try {
         /**
@@ -28,6 +29,7 @@ const startServer = async (): Promise<void> => {
          * Sync Database
          * (Development only)
          */
+        
         await sequelize.sync();
 
         console.log("✅ Database Synced");
